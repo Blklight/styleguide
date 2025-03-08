@@ -149,4 +149,32 @@
     @apply bg-background text-foreground;
     font-family: "Inter", "Geist Sans", sans-serif;
   }
+
+  .font-inter {
+    font-family: "Inter", "Geist Sans", sans-serif;
+  }
+
+  .font-barlow {
+    font-family: "Barlow", "Inter", "Geist Sans", sans-serif;
+  }
+
+  .font-jetbrains {
+    font-family: "JetBrains Mono", "Geist Mono", monospace;
+  }
+
+  .font-eb-garamond {
+    font-family: "EB Garamond", serif;
+  }
+
+  .font-roboto {
+    font-family: "Roboto", sans-serif;
+  }
+
+  .font-overpass {
+    font-family: "Overpass", sans-serif;
+  }
+
+  .font-playfair {
+    font-family: "Playfair Display", serif;
+  }
 }

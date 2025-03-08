@@ -40,10 +40,10 @@ export const NavToolbar = () => {
   }, [isLogged]);
   return (
     <>
-      <div className="flex justify-between items-center p-4">
-        <SearchCommand />
+      <div className="flex justify-end items-center p-4">
+        {/* <SearchCommand /> */}
         <div className="flex gap-2 items-center">
-          {isLogged && (
+          {/* {isLogged && (
             <SplitDropdownButton
               iconOnly
               icon={<Sparkle className="h-4 w-4" />}
@@ -51,11 +51,11 @@ export const NavToolbar = () => {
               variant="secondary"
               onClick={() => router.push("/tools")}
             />
-          )}
+          )} */}
 
           <ModeToggle />
-          {isLogged && user !== null && <NavUser user={user} />}
-          {!isLogged && <LoginButton />}
+          {/* {isLogged && user !== null && <NavUser user={user} />}
+          {!isLogged && <LoginButton />} */}
         </div>
       </div>
     </>

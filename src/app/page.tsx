@@ -1,47 +1,136 @@
 "use client";
 import * as React from "react";
-
 import Image from "next/image";
-import { SidebarProvider } from "@/components/ui/sidebar";
-import { Skeleton } from "@/components/ui/skeleton";
 
 import { NavToolbar } from "@/components/nav-toolbar";
-import { BackgroundCard, cardData } from "@/components/styling";
-import { IconSidebar } from "@/components/icon-sidebar";
+import { ModeToggle } from "@/components/mode-toggle";
+
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Separator } from "@/components/ui/separator";
+
+const typos = [
+  {
+    name: "Inter",
+    className: "font-inter",
+  },
+  {
+    name: "JetBrains Mono",
+    className: "font-jetbrains",
+  },
+  {
+    name: "EB Garamond",
+    className: "font-eb-garamond",
+  },
+  {
+    name: "Barlow",
+    className: "font-barlow",
+  },
+  {
+    name: "Playfair Display",
+    className: "font-playfair",
+  },
+];
 
 export default function Home() {
   return (
-    <SidebarProvider>
-      <div className="w-full flex flex-row min-h-svh">
-        <IconSidebar />
-        <div className="bg-slate-50 dark:bg-slate-950 shadow rounded-lg border flex-1 my-2.5 mr-2.5">
-          <NavToolbar />
-          <div className="mt-2 mb-5 px-4">
-            <img
-              src={"/example-img.jpg"}
-              alt="Image"
-              className="w-full h-96 object-cover !bg-dark-100 dark:!bg-muted mb-4 rounded-lg grayscale"
-            />
-
-            <div>
-              <h3 className="text-3xl font-bold mb-2">Tutoriais</h3>
-              <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mb-4">
-                {Array.from({ length: 3 }).map((_, index) => (
-                  <BackgroundCard key={index} data={cardData} />
-                ))}
-              </div>
+    <div className="w-full flex flex-row min-h-svh">
+      <div className="w-full max-w-[900px] mx-auto bg-slate-50 dark:bg-slate-950 shadow rounded-lg border flex-1 my-2.5">
+        <div className="flex justify-between p-5">
+          <div className="flex md:flex-row flex-col gap-4 items-center">
+            <div className="flex items-center justify-center bg-slate-900 dark:bg-slate-100 rounded-lg p-2.5">
+              <Image
+                src="/blklight-light.svg"
+                className="!max-w-none mx-auto w-16 h-16 invert-0 dark:invert"
+                width="96"
+                height="96"
+                alt="Ultimate Mercer Logo"
+              />
             </div>
-            <div className="">
-              <Skeleton className="w-80 h-10 !bg-dark-100 dark:!bg-muted mb-4" />
-              <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mb-4">
-                <Skeleton className="w-full h-72 !bg-dark-100 dark:!bg-muted" />
-                <Skeleton className="w-full h-72 !bg-dark-100 dark:!bg-muted" />
-                <Skeleton className="w-full h-72 !bg-dark-100 dark:!bg-muted" />
-              </div>
+            <h1 className="text-4xl md:text-left text-center font-bold tracking-wide leading-tight mb-2">
+              Styleguide - All New Blklight
+            </h1>
+          </div>
+          <ModeToggle />
+        </div>
+        <div className="mt-2 mb-5 px-5">
+          {typos.map((typo, index) => (
+            <div key={index} className="mb-4">
+              <h2
+                className={`${typo.className} text-4xl tracking-wide font-bold mb-2`}
+              >
+                {typo.name}
+              </h2>
+              <p className={`${typo.className} text-[21px]`}>
+                ABCDEFGHIJKLMNOPQRSTUVWXYZ
+              </p>
+              <p className={`${typo.className} text-[21px]`}>
+                abcdefghijklmnopqrstuvwxyz
+              </p>
+              <p className={`${typo.className} text-[21px]`}>0123456789</p>
+            </div>
+          ))}
+
+          <Separator className="my-5" />
+
+          <div className="grid grid-cols-6 gap-4">
+            <div className="flex flex-col gap-2.5 bg-white dark:bg-slate-900 shadow p-2.5 rounded-lg">
+              <div className="w-full h-24 bg-[#007bff] rounded-lg"></div>
+              <p className="text-lg font-semibold">HEX: #0000FF</p>
+            </div>
+            <div className="flex flex-col gap-2.5 bg-white dark:bg-slate-900 shadow p-2.5 rounded-lg">
+              <div className="w-full h-24 bg-[#480bff] rounded-lg"></div>
+              <p className="text-lg font-semibold">HEX: #0000FF</p>
+            </div>
+            <div className="flex flex-col gap-2.5 bg-white dark:bg-slate-900 shadow p-2.5 rounded-lg">
+              <div className="w-full h-24 bg-[#121212] rounded-lg"></div>
+              <p className="text-lg font-semibold">HEX: #0000FF</p>
+            </div>
+            <div className="flex flex-col gap-2.5 bg-white dark:bg-slate-900 shadow p-2.5 rounded-lg">
+              <div className="w-full h-24 bg-[#eaeaea] rounded-lg"></div>
+              <p className="text-lg font-semibold">HEX: #0000FF</p>
+            </div>
+            <div className="flex flex-col gap-2.5 bg-white dark:bg-slate-900 shadow p-2.5 rounded-lg">
+              <div className="w-full h-24 bg-[#F3E4D7] rounded-lg"></div>
+              <p className="text-lg font-semibold">HEX: #0000FF</p>
+            </div>
+            <div className="flex flex-col gap-2.5 bg-white dark:bg-slate-900 shadow p-2.5 rounded-lg">
+              <div className="w-full h-24 bg-[#f1eee5] rounded-lg"></div>
+              <p className="text-lg font-semibold">HEX: #0000FF</p>
+            </div>
+            <div className="flex flex-col gap-2.5 bg-white dark:bg-slate-900 shadow p-2.5 rounded-lg">
+              <div className="w-full h-24 bg-[#eb1e32] rounded-lg"></div>
+              <p className="text-lg font-semibold">HEX: #0000FF</p>
+            </div>
+            <div className="flex flex-col gap-2.5 bg-white dark:bg-slate-900 shadow p-2.5 rounded-lg">
+              <div className="w-full h-24 bg-[#ffff00] rounded-lg"></div>
+              <p className="text-lg font-semibold">HEX: #0000FF</p>
+            </div>
+            <div className="flex flex-col gap-2.5 bg-white dark:bg-slate-900 shadow p-2.5 rounded-lg">
+              <div className="w-full h-24 bg-[#ff6d00] rounded-lg"></div>
+              <p className="text-lg font-semibold">HEX: #0000FF</p>
             </div>
           </div>
+
+          {/* <Tabs defaultValue="sobre" className="">
+            <TabsList>
+              <TabsTrigger value="sobre">Sobre</TabsTrigger>
+              <TabsTrigger value="tipografia">Tipografia</TabsTrigger>
+              <TabsTrigger value="cores">Cores</TabsTrigger>
+            </TabsList>
+            <TabsContent value="sobre">
+              Make changes to your account here.
+            </TabsContent>
+            <TabsContent value="tipografia">
+              
+            </TabsContent>
+            <TabsContent value="cores">
+              <h2 className="text-3xl tracking-wide font-bold">Cores</h2>
+            </TabsContent>
+          </Tabs> */}
+
+          <div className=""></div>
         </div>
       </div>
-    </SidebarProvider>
+    </div>
   );
 }
