@@ -60,13 +60,16 @@ export default function Home() {
               >
                 {typo.name}
               </h2>
-              <p className={`${typo.className} text-[21px]`}>
+              <p className={`${typo.className} text-[24px]`}>
+                The quick brown fox jumps over the lazy dog.
+              </p>
+              <p className={`${typo.className} text-[24px]`}>
                 ABCDEFGHIJKLMNOPQRSTUVWXYZ
               </p>
-              <p className={`${typo.className} text-[21px]`}>
+              <p className={`${typo.className} text-[24px]`}>
                 abcdefghijklmnopqrstuvwxyz
               </p>
-              <p className={`${typo.className} text-[21px]`}>0123456789</p>
+              <p className={`${typo.className} text-[24px]`}>0123456789</p>
             </div>
           ))}
 
