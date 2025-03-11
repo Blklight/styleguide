@@ -7,6 +7,8 @@ import { ModeToggle } from "@/components/mode-toggle";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
+import ColorPaletteDisplay from "@/components/color-palette";
+import BaseColorGrid from "@/components/base-color-grid";
 
 const typos = [
   {
@@ -29,6 +31,18 @@ const typos = [
     name: "Playfair Display",
     className: "font-playfair",
   },
+];
+
+const colors = [
+  "#007bff",
+  "#480bff",
+  "#121212",
+  "#eaeaea",
+  "#F3E4D7",
+  "#f1eee5",
+  "#eb1e32",
+  "#ffff00",
+  "#ff6d00",
 ];
 
 export default function Home() {
@@ -85,11 +99,36 @@ export default function Home() {
               <p className="text-lg font-semibold">HEX: #0000FF</p>
             </div>
             <div className="flex flex-col gap-2.5 bg-white dark:bg-slate-900 shadow p-2.5 rounded-lg">
+              <div className="w-full h-24 bg-[#4461e1] rounded-lg"></div>
+              <p className="text-lg font-semibold">HEX: #0000FF</p>
+            </div>
+            <div className="flex flex-col gap-2.5 bg-white dark:bg-slate-900 shadow p-2.5 rounded-lg">
+              <div className="w-full h-24 bg-[#4866e6] rounded-lg"></div>
+              <p className="text-lg font-semibold">HEX: #0000FF</p>
+            </div>
+            <div className="flex flex-col gap-2.5 bg-white dark:bg-slate-900 shadow p-2.5 rounded-lg">
+              <div className="w-full h-24 bg-[#4a65dd] rounded-lg"></div>
+              <p className="text-lg font-semibold">HEX: #0000FF</p>
+            </div>
+            <div className="flex flex-col gap-2.5 bg-white dark:bg-slate-900 shadow p-2.5 rounded-lg">
+              <div className="w-full h-24 bg-[#5252e0] rounded-lg"></div>
+              <p className="text-lg font-semibold">HEX: #0000FF</p>
+            </div>
+
+            <div className="flex flex-col gap-2.5 bg-white dark:bg-slate-900 shadow p-2.5 rounded-lg">
+              <div className="w-full h-24 bg-[#4169e1] rounded-lg"></div>
+              <p className="text-lg font-semibold">HEX: #0000FF</p>
+            </div>
+            <div className="flex flex-col gap-2.5 bg-white dark:bg-slate-900 shadow p-2.5 rounded-lg">
               <div className="w-full h-24 bg-[#121212] rounded-lg"></div>
               <p className="text-lg font-semibold">HEX: #0000FF</p>
             </div>
             <div className="flex flex-col gap-2.5 bg-white dark:bg-slate-900 shadow p-2.5 rounded-lg">
               <div className="w-full h-24 bg-[#eaeaea] rounded-lg"></div>
+              <p className="text-lg font-semibold">HEX: #0000FF</p>
+            </div>
+            <div className="flex flex-col gap-2.5 bg-white dark:bg-slate-900 shadow p-2.5 rounded-lg">
+              <div className="w-full h-24 bg-[#f7f7f7] rounded-lg"></div>
               <p className="text-lg font-semibold">HEX: #0000FF</p>
             </div>
             <div className="flex flex-col gap-2.5 bg-white dark:bg-slate-900 shadow p-2.5 rounded-lg">
@@ -113,6 +152,9 @@ export default function Home() {
               <p className="text-lg font-semibold">HEX: #0000FF</p>
             </div>
           </div>
+
+          <ColorPaletteDisplay />
+          <BaseColorGrid />
 
           {/* <Tabs defaultValue="sobre" className="">
             <TabsList>
