@@ -83,11 +83,8 @@ export default function BaseColorGrid() {
   };
 
   return (
-    <div className="container mx-auto py-8 px-4">
-      <h1 className="text-3xl font-bold mb-4">Base Colors</h1>
-      <p className="text-muted-foreground mb-8">
-        Click on a color to see more details
-      </p>
+    <div className="container mb-5">
+      <h1 className="text-[40px] font-bold mb-4">Cores base</h1>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
         {colorsAlt.map((color: ColorData) => (
@@ -127,10 +124,10 @@ export default function BaseColorGrid() {
             <div className="flex flex-col">
               <div className="font-medium text-sm">{color.name}</div>
               <div className="flex items-center mt-1">
-                <code className="text-xs text-muted-foreground">
+                <code className="text-xs text-muted-foreground uppercase">
                   {color.baseHex}
                 </code>
-                <Button
+                {/* <Button
                   variant="ghost"
                   size="icon"
                   className="h-5 w-5 ml-1"
@@ -141,7 +138,7 @@ export default function BaseColorGrid() {
                   ) : (
                     <Copy className="h-3 w-3" />
                   )}
-                </Button>
+                </Button> */}
               </div>
             </div>
           </div>
@@ -170,7 +167,7 @@ export default function BaseColorGrid() {
                 className="h-32 rounded-md flex items-center justify-center"
                 style={{ backgroundColor: selectedColor.baseHex }}
               >
-                <div
+                {/* <div
                   className={`px-3 py-1.5 rounded-md text-sm font-medium bg-white/90 dark:bg-black/90 ${
                     isDarkColor(selectedColor.baseHex)
                       ? "text-white"
@@ -178,7 +175,7 @@ export default function BaseColorGrid() {
                   }`}
                 >
                   {selectedColor.name}
-                </div>
+                </div> */}
               </div>
 
               <div className="space-y-3">
@@ -245,7 +242,7 @@ export default function BaseColorGrid() {
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center">
+                {/* <div className="flex justify-between items-center">
                   <div className="font-medium">Tailwind</div>
                   <div className="flex items-center gap-2">
                     <code className="bg-muted px-2 py-1 rounded text-sm">
@@ -274,7 +271,7 @@ export default function BaseColorGrid() {
                       )}
                     </Button>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {copiedFormat && (
